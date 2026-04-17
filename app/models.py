@@ -41,7 +41,7 @@ class Reservation(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     seat_id = Column(Integer, ForeignKey('seats.id'), nullable=False)
-    reservation_time = Column(DateTime, default=datetime.datetime.utcnow)
+    reservation_time = Column(DateTime, default=datetime.datetime.utcnow())
     
     user = relationship("User", back_populates="reservations")
     seat = relationship("Seat", back_populates="reservations")  
